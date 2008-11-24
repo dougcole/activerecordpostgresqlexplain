@@ -1,1 +1,1 @@
-ActiveRecord::Base.send :extend, Estately::PostgresqlCostEstimator
+ActiveRecord::Base.send :extend, PostgresqlCostEstimator
