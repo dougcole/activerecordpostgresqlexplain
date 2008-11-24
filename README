@@ -7,9 +7,15 @@ an ActiveRecord extention for accessing Postgresql's explain data - useful for e
 Example
 =======
 
->> User.cost(:conditions => "login ILIKE '%doug%'")
+>> User.estimate(:cost, :conditions => "login ILIKE '%doug%'")
 => 85.78
 
+>> User.estimate(:count, :conditions => "login ILIKE '%doug%'")
+=> 15
+
+Note these are only estimates, take them as an order of magnitude estimate instead of faster count:
+>> User.count(:conditions => "login ILIKE '%doug%'")
+=> 8    # vs the estimate of 15
 
 
 Copyright (c) 2008 Estately.com, released under the MIT license
